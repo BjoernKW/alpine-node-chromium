@@ -12,3 +12,10 @@ jobs:
     - uses: actions/checkout@v1
     - name: Build the Docker image
       run: docker build . --file Dockerfile --tag alpine-node-chromium:$(date +%s)
+    - uses: actions/checkout@master
+    - name: Publish to Docker registry
+      uses: elgohr/Publish-Docker-Github-Action@2.1
+      with:
+        name: bjoernkw/alpine-node-chromium
+        username: ${{ secrets.DOCKER_USERNAME }}
+        password: ${{ secrets.DOCKER_ACCESS_TOKEN }}

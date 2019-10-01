@@ -18,4 +18,4 @@ Docker image based on Alpine Linux that provides both Node.js and Chromium for h
 
 ## License
 
-**MIT License**
+[MIT License](https://github.com/BjoernKW/alpine-node-chromium/blob/master/LICENSE)

@@ -8,9 +8,9 @@ Docker image based on Alpine Linux that provides both Node.js and Chromium for h
 ## Built With
 
 * [Alpine Linux](https://alpinelinux.org/)
+* [Chromium](https://www.chromium.org/Home)
 * [Docker](https://www.docker.com/)
 * [Node.js](https://nodejs.org)
-* [Chromium](https://www.chromium.org/Home)
 
 ## Authors
 

@@ -35,7 +35,8 @@ RUN echo @edge http://nl.alpinelinux.org/alpine/edge/community >> /etc/apk/repos
 RUN mkdir -p /usr/src/app \
     && adduser -D chrome \
     && chown -R chrome:chrome /usr/src/app \
-    && chown chrome:chrome /usr/local/lib/node_modules
+    && chown chrome:chrome /usr/local/lib/node_modules \
+    && chown chrome:chrome /usr/local/bin
 
 # Run Chrome as non-privileged
 USER chrome

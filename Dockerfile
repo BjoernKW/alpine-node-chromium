@@ -47,4 +47,4 @@ ENV CHROME_BIN=/usr/bin/chromium-browser \
 
 COPY ./chrome.json /home/chrome/chrome.json
 
-ENTRYPOINT ["chromium-browser", "--security-opt seccomp=/home/chrome/chrome.json",  "--headless", "--disable-gpu", "--disable-software-rasterizer", "--disable-dev-shm-usage", "--disable-sync", "--disable-translate", "--disable-background-networking", "--disable-extensions"]
+ENTRYPOINT ["chromium-browser", "--no-sandbox",  "--headless", "--disable-gpu", "--disable-software-rasterizer", "--disable-dev-shm-usage", "--disable-sync", "--disable-translate", "--disable-background-networking", "--disable-extensions", "--remote-debugging-address=0.0.0.0", "--remote-debugging-port=9222", "https://www.chromestatus.com"]

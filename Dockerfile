@@ -40,6 +40,7 @@ RUN mkdir -p /usr/src/app \
 
 # Run Chrome as non-privileged user
 USER chrome
+WORKDIR /usr/src/app
 
 ENV CHROME_BIN=/usr/bin/chromium-browser \
     CHROME_PATH=/usr/lib/chromium/

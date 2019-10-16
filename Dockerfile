@@ -38,6 +38,9 @@ RUN mkdir -p /usr/src/app \
     && chown chrome:chrome /usr/local/lib/node_modules \
     && chown chrome:chrome /usr/local/bin
 
+# Run Chrome as non-privileged user
+USER chrome
+
 ENV CHROME_BIN=/usr/bin/chromium-browser \
     CHROME_PATH=/usr/lib/chromium/
 

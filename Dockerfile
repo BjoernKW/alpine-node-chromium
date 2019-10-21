@@ -33,13 +33,13 @@ RUN echo @edge http://nl.alpinelinux.org/alpine/edge/community >> /etc/apk/repos
 
 # Add Chrome as a user
 RUN mkdir -p /usr/src/app \
-    && adduser -D chrome \
-    && chown -R chrome:chrome /usr/src/app \
-    && chown chrome:chrome /usr/local/lib/node_modules \
-    && chown chrome:chrome /usr/local/bin
+    && adduser -D chrome1 \
+    && chown -R chrome1:chrome1 /usr/src/app \
+    && chown chrome1:chrome1 /usr/local/lib/node_modules \
+    && chown chrome1:chrome1 /usr/local/bin
 
 # Run Chrome as non-privileged user
-USER chrome
+USER chrome1
 WORKDIR /usr/src/app
 
 ENV CHROME_BIN=/usr/bin/chromium-browser \

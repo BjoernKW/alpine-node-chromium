@@ -31,6 +31,9 @@ RUN echo @edge http://nl.alpinelinux.org/alpine/edge/community >> /etc/apk/repos
     && rm -rf /var/cache/* \
     && mkdir /var/cache/apk
 
+# Enable user namespace cloning
+sysctl -w kernel.unprivileged_userns_clone=1
+
 # Add Chrome as a user
 RUN mkdir -p /usr/src/app \
     && adduser -D chrome \
@@ -47,4 +50,4 @@ ENV CHROME_BIN=/usr/bin/chromium-browser \
 
 COPY ./chrome.json /home/chrome/chrome.json
 
-ENTRYPOINT ["chromium-browser", "--no-sandbox",  "--headless", "--disable-gpu", "--disable-software-rasterizer", "--disable-dev-shm-usage", "--disable-sync", "--disable-translate", "--disable-background-networking", "--disable-extensions", "--remote-debugging-address=0.0.0.0", "--remote-debugging-port=9222", "https://www.chromestatus.com"]
+ENTRYPOINT ["chromium-browser", "--headless", "--disable-gpu", "--disable-software-rasterizer", "--disable-dev-shm-usage", "--disable-sync", "--disable-translate", "--disable-background-networking", "--disable-extensions", "--remote-debugging-address=0.0.0.0", "--remote-debugging-port=9222", "https://www.chromestatus.com"]

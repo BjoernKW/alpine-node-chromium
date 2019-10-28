@@ -31,9 +31,6 @@ RUN echo @edge http://nl.alpinelinux.org/alpine/edge/community >> /etc/apk/repos
     && rm -rf /var/cache/* \
     && mkdir /var/cache/apk
 
-# Enable user namespace cloning
-RUN sysctl -w kernel.unprivileged_userns_clone=1
-
 # Add Chrome as a user
 RUN mkdir -p /usr/src/app \
     && adduser -D chrome \
